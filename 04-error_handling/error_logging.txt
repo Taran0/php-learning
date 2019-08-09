@@ -1,0 +1,6 @@
+***ha nem látod a hibát a browserben***
+php mappa/php.ini-development fájl -> search "error handling and logging"
+első blokk utolsó sora: "error_reporting = E_ALL" vagy 
+"error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT"
+
+***x***
