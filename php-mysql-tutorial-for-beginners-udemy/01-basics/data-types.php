@@ -7,6 +7,19 @@
 
 
 <?php
+//string
+$text ="Balázs";
+
+//integer
+$num =999;
+
+//boolean
+$question1 =true;
+
+//array
+$names = array("Jóskagyerek", "Margit");
+
+var_dump($text);
 
 ?>
 
