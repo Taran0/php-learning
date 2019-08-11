@@ -7,7 +7,6 @@
 
 
 <?php
-// BUG: miafaszbajavan
 function f1(){
     $age = 32;
     $name = "Balázs";
