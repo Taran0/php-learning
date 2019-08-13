@@ -15,7 +15,7 @@ cookie create
     <title>Udemy php/mysql tutorial - php part ultimate practice</title>
 </head>
 <body>
-    <form method="post">
+    <form action="" method="post">
         <b><label>Személyes adatok</label></b>
         <div>
             <label>Név:
@@ -29,7 +29,7 @@ cookie create
         </div>
         <div>
             <label>E-mail:
-                <input type="email" name="mail">
+                <input type="text" name="mail">
             </label>
         </div>
         <div>
@@ -73,7 +73,6 @@ cookie create
     </form>
 
 <h1>php</h1>
-<a href="profile.php">Profil generálás</a>
 <?php
 include('functions.php');
 
@@ -90,33 +89,41 @@ $image = $_POST['image'];
 
 //**FUNCTIONS */
 // cookie create
+setcookie("user", $mail, time()+60*60*24*30);
 
-// fv-kor alapján rang if else el
-echo titlemaker($age);
+// fv-kor alapján rang if else 
+echo $name . " egy " . titlemaker($age) . "<br>";
 
 // fv- mail ellenőrzés és mailküldés
 $mailvalidate = mailcheck($mail);
-echo mailsend($mailvalidate, $mail);
+echo $mailvalidate . "<br>";
+echo mailsend($mailvalidate, $mail) . "<br>";
 
 // fv-password titkosít
 $passwordEncrypted = psswdEncrypt($password);
-echo "jelszó titkosítva, hash: " . $passwordEncrypted;
+echo "jelszó titkosítva, hash: " . $passwordEncrypted . "<br>";
+
 
 // fv-targyakhoz random jegyet rendel
 $note1 = noteGenerate();
 $note2 = noteGenerate();
 $note3 = noteGenerate();
-echo "A" . $subject1 . "tárgyhoz tartozó jegy: " . $note1;
-echo "A" . $subject2 . "tárgyhoz tartozó jegy: " . $note2;
-echo "A" . $subject3 . "tárgyhoz tartozó jegy: " . $note3;
+echo "A" . $subject1 . " tárgyhoz tartozó jegy: " . $note1 . "<br>";
+echo "A" . $subject2 . " tárgyhoz tartozó jegy: " . $note2 . "<br>";
+echo "A" . $subject3 . " tárgyhoz tartozó jegy: " . $note3 . "<br>";
+
 
 // passwd file generate
 generatePasswd($mail, $passwordEncrypted);
-// TODO: passwd file open
-echo "Passw file generated, open: ";
-?>
+echo "Passwd file generated, open: " . "<a href='passwd.txt'>passwd</a>" . "<br>";
 
-// FIXME: profile generate link műxik?
+// BUG: regform: képfeltöltés nem jó
+// pics upload
+picsUpload($image);
+echo "<img src/'$image'>";
+
+?>
+<br><br>
 <a href="profile.php">Profil generálás</a>
 
 </body>

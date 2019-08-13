@@ -19,6 +19,7 @@ $question1 =true;
 //array
 $names = array("Jóskagyerek", "Margit");
 
+//változó adatainak (típus, hossz érték) lekérdezése
 var_dump($text);
 
 ?>

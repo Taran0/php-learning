@@ -1,3 +1,7 @@
+<?php
+    $tooltip = "felhasználónév megadása";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,8 @@
     <title>Document</title>
 </head>
 <body>
-    jóskagyerek
-    <?php
-    // UNDONE: regform: profilgenerálás
-    ?>
+    <label>username: 
+        <input type="text" value="<?php echo $tooltip; ?>">
+    </label>
 </body>
 </html>

@@ -1,34 +1,73 @@
 <?php
-// TODO: practice project functions
 // fv-kor alapján rang if else el
-titlemaker($age){
+function titlemaker($age)
+{
+    if ($age < 16) {
+        return "gyerek";
+    } else if ($age <= 18) {
+        return "kamasz";
+    } else if ($age < 60) {
+        return "felnőtt";
+    } else {
+        return "öreg";
+    }
+}
 
-    // return üzi-ranggenerál;
+function mailcheck($mail)
+{
+    if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        return "e-mail is valid";
+    } else {
+        return "invalid e-mail";
+    }
 }
 
 // fv- mail ellenőrzés és mailküldés
-mailsend($mailvalidate, $mail){
+function mailsend($mailvalidate, $mail)
+{
+    // if ($mailvalidate == true) {
+    //     $to = "anyád@gmail.com";
+    //     $subject = "tárgy";
+    //     $message = "lófasz a picsádba";
+    //     $sender = "en@gmail.com";
 
-    // return üzi-validate+mailsend
+    //     mail($to, $subject, $message, $sender);
+    // }
+
+    return "Az email elküldve.";
 }
 
 // fv-password titkosít
-psswdEncrypt($password){
-
-    // return titkosított jelszó
+function psswdEncrypt($password)
+{
+    $crypted = md5($password);
+    return $crypted;
 }
-
 
 // fv-targyakhoz random jegyet rendel
-noteGenerate(){
-
-    // return generated number
+function noteGenerate()
+{
+    $gen_num = rand(1, 5);
+    return $gen_num;
 }
-
 
 // passwd file generate
-generatePasswd($mail, $passwordEncrypted){
-
-    //nincs return
+function generatePasswd($mail, $passwordEncrypted)
+{
+    fwrite(fopen('passwd.txt', 'w'), $mail . " " . $passwordEncrypted);
 }
-?>
+
+// pics upload
+function picsUpload($image)
+{
+    if (isset($image)) {
+        //files[name of input][fájlnév kiirása]
+        $kep = $_FILES['image']['name'];
+        //több fájlt képet akarsz feltölteni - ez a temporary
+        $kep_tmp = $_FILES['image']['tmp_name'];
+
+        //mentés helye
+        move_uploaded_file($image_tmp, "images/$kep");
+        echo "<img src='images/$kep'>";
+    }
+}
