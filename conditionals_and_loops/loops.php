@@ -41,6 +41,14 @@ foreach ($cities as $values) {
     echo $values . "<br>";
 }
 
+$emberek = array("Balazs" => 32, "Orsi" => 29);
+
+foreach($emberek as $kulcs=>$value){
+    echo "Kulcs: " . $kulcs . ", Érték: " . $value . "<br>"; 
+}
+
+
+
 ?>
 
 </body>

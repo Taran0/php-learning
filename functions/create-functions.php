@@ -24,6 +24,14 @@ function f2() {
 }
 
 f2();
+
+//argumentum default értéke
+function magassag($x=4){
+    echo "a minimális magasság: " . $x . "<br>";
+}
+
+magassag(5);
+magassag();
 ?>
 
 </body>

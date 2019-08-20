@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Local variable</title>
-</head>
-<body>
-
 <?php
-$test = "This is a single information<br>";
-echo $test;
+/*
+    így ahogy itt van nem nagyon használjuk őket, mert
+    olyanok mint a kurvák, mindenki megkapja őket, és nem azt kapod amit vársz :)
+*/
+$x = 5; //globális változó
 
-$num1 = 1014;
-$num2 = 25;
-$sum = $num1 + $num2;
-echo $sum;
-?>
-</body>
-</html>
+function kiir()
+{
+    $x = 6; //lokális változó
+
+    //globális használata itt v1
+    global $x; 
+    echo $x . "<br>";
+
+    //globális használta itt v2
+    $GLOBALS['x'] += 2;
+    echo $x . "<br>";
+}
+
+kiir();

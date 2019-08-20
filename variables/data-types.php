@@ -9,6 +9,7 @@
 <?php
 //string
 $text ="Balázs";
+echo "A nevem: {$text}" . "<br>";
 
 //integer
 $num =999;
