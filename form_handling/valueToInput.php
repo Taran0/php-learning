@@ -12,6 +12,7 @@
 </head>
 <body>
     <label>username: 
+        <!-- value-ba írás php-ben -->
         <input type="text" value="<?php echo $tooltip; ?>">
     </label>
 </body>

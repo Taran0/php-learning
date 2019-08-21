@@ -8,9 +8,10 @@
 
 <?php
 //megjeleníti egy totál más php fájl tartalmát
-//include('create-table.php');
+//de ha nem elérhető, attól még ez a fájl lefut
+include('create-table.php');
 
-//ua?
+//ez a fájl csak akkor fut le, ha elérhető a require
 require('create-table.php');
 ?>
 

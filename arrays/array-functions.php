@@ -27,4 +27,15 @@
     print_r($szinek);
     echo "<br><br>";
 
-    
+    //implode: elemek listája stringként
+    //args: elválasztó, array
+    echo "implode" . "<br>";   
+    echo implode(" ", $szinek) . "<br>";
+    echo "<br><br>";
+
+    //explode: stringből tömb
+    //args: elválasztó, string
+    $szoveg = "jóska megittad a pálinkát"; 
+    $convertedArray = explode(" ", $szoveg);
+    print_r($convertedArray);
+    echo "<br><br>";
