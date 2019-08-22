@@ -1,0 +1,19 @@
+match zero or more of revious: *
+match one or more of previous: +
+match one or zero of previous: ?
+match exactly numbers of previous: {4}
+min, max: {min,max}
+
+anchors:
+match start: ^
+match end: $
+match any single char: .
+
+spec char - you have to use them with \
+?
+.
+$
+*
++
+
+practice: regex101.com
