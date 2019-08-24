@@ -1,0 +1,8 @@
+php/php.ini:
+sendmail_path
+
+xampp/sendmail/sendmail.ini:
+smtp_server=smtp.gmail.com
+smtp_port=587
+auth_username=fabzsi@gmail.com
+auth_password=**********
