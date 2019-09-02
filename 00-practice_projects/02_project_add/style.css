@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#menu {
+    background-color: black;
+    text-align: center;
+    padding: 8px;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu li {
+    display: inline;
+}
+
+#menu a {
+    color: lightgrey;
+    text-decoration: none;
+    padding-right: 40px;
+    font-size: 21px;
+}
+
+#menu a:hover {
+    color: grey;
+}
+
+body {
+    background-image: url('../02_project_add/wallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.window {
+    border: 1px solid black;
+    margin: 50px; 
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 40px;
+    text-align: center;
+    background-color: darkgray;
+    opacity: 0.7;
+}
+
+form label {
+    display: block;
+    font-size: 17px;
+}
+
+#form-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.form-group {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    border: none;
+    margin: 10px;
+    padding: 7px;
+    font-size: 14px;
+    background-color: wheat;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: darkslategrey;
+}
+
+table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    opacity: 0.7;
+    border-color: black;
+    margin-top: 20px;
+}
+
+table th{
+    font-size: 17px;
+}
+
+table th, table td{
+    color: black;
+    text-align: center;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.message {
+    font-style: italic;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    background-color: darkgray;
+    opacity: 0.7;
+    border: 1px solid black;
+    padding: 15px;
+    vertical-align: middle;
+}

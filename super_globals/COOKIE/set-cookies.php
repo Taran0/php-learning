@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <?php
-//beállítás - setcooke(name, value, time(mennyi ideig legyen a user gépén))
-//+sec*min*hours*days (szóval 30 napig) - mert másodpercben van megadva a time
+//time(ret: in sec) + sec*min*hours*days (szóval 30 napig)
 $expire = time()+60*60*24*30;
-setcookie("user","jóska",$expire)
+
+//setcookie(name, value, expire time)
+setcookie("juzer","jóska",$expire)
 
 ?>
 <html>
@@ -18,10 +19,12 @@ setcookie("user","jóska",$expire)
 //cookies - sima látogatók és mentesz róluk adatokat
 
 //az eltárolt cookie használata 
-echo $_COOKIE['user'] . "<br>";
+echo $_COOKIE['juzer'] . "<br>";
 
 //az összes infót kiiírja a cookie-ról
+echo "<pre>";
 print_r($_COOKIE);
+echo "</pre>";
 ?>
 
 </body>
