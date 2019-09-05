@@ -8,7 +8,7 @@
 $web = "Google pakistan";
 $search = "Jazeb Akram Online Courses & Website";
 
-//search előtt raw utána sima
+//? előtt raw, utána sima
 $result = "https://" . rawurlencode($web) . "?Search=" . urlencode($search);
 echo $result . "<br>";
 

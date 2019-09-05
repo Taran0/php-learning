@@ -18,3 +18,4 @@ echo mt_rand() % 10 + (mt_rand() % 10) / 10 . "<br>";
 
 //tört generálása - 0-9.99 (külön az egész és a tört)
 echo mt_rand() % 10 + (mt_rand() % 100) / 100 . "<br>";
+

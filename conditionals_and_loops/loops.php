@@ -36,6 +36,7 @@ for ($i = 0; $i < 3; $i++) {
 }
 
 //foreach
+//tömbök bejárása
 $cities = array("Pécs", "Szigetvár", "Kleinarl");
 foreach ($cities as $values) {
     echo $values . "<br>";

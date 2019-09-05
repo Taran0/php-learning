@@ -27,3 +27,4 @@ switch ($nap) {
         echo "Ilyen nap nincs!";
 }
  
+

@@ -32,6 +32,8 @@ function magassag($x=4){
 
 magassag(5);
 magassag();
+
+
 ?>
 
 </body>
