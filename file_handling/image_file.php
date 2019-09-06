@@ -5,8 +5,8 @@
 </head>
 <body>
 <form action="image_file.php" method="post" enctype="multipart/form-data">
-Upload images: <input type="file" name="image">
-<input type="submit" name="upload" value="Upload file">
+    Upload images: <input type="file" name="image">
+    <input type="submit" name="upload" value="Upload file">
 </form>
 
 <?php

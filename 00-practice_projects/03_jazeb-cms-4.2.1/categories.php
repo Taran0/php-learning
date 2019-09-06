@@ -5,10 +5,39 @@ require_once 'includes/sessions.php';
 
 if(isset($_POST['submit'])){
     $title = $_POST['title'];
+    $admin = "Taran";
+
+    date_default_timezone_set("Europe/Budapes");
+    $CurrentTime = time();
+    $DateTime = strftime("%B-%d-%Y %H:%M:%S", $CurrentTime);
 
     if(empty($_POST['title'])){
         $_SESSION['ErrorMessage'] = "All field must be filled out!";
         redirect_to("categories.php");
+    } elseif (strlen($title) < 3) {
+        $_SESSION['ErrorMessage'] = "Category title should be at least 2 character long";
+        redirect_to("categories.php");
+    } elseif (strlen($title) > 49) {
+        $_SESSION['ErrorMessage'] = "Category title should be under 50 character long";
+        redirect_to("categories.php");
+    } else {
+        //query to insert category in db when everything is fine
+        $sql = "INSERT INTO category(title, author, created)";
+        $sql .= "VALUES(:catname, :adminname, :datetime)";
+
+        $stmt = $connectingDB->prepare($sql);
+
+        $stmt->bindValue(":catname", $title);
+        $stmt->bindValue(":adminname", $admin);
+        $stmt->bindValue(":datetime", $DateTime);
+
+        if($stmt->execute()){
+            $_SESSION['SuccessMessage'] = "Category was created successfully";
+            redirect_to("categories.php");
+        } else {
+            $_SESSION['ErrorMessage'] = "Something went wrong. Try again!";
+            redirect_to("categories.php");
+        }
     }
 }
 ?>
