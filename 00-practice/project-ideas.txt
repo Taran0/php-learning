@@ -1,0 +1,2 @@
+daily todo planner
+-mennyi időt szász egy-egy projektre - aztán ez collapse szerűen lenyílik altevékenységekre

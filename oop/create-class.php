@@ -6,7 +6,7 @@ class Szemely
     public $kerNev = "";
     public $kor = null;
     private $password = "12345"; //csak osztály methoddal férsz hozzá, nem öröklődik
-    protected $dns = "tcgat"; //öröklődik
+    protected $dns = "tcgat"; //csak osztály methoddal férsz hozzá, öröklődik
     public static $szemszin = "kék"; //osztályszintű változó
 
     //const: osztályszinttű, alapértelmezettként publikus, nem megváltoztatható, de öröklődik
@@ -54,7 +54,7 @@ class Szemely
 $ember1 = new Szemely("Musk", "Elon");
 $ember1->kor = 48;
 
-//ezt így lehet, de nem jó, mert static változót az osztály szinttű változó
+//ezt így lehet, de nem jó, mert static változó az osztály szinttű változó
 //itt meg objektumszintű változóként kezeltük (helyes: self kulcszó+osztálymethodon keresztül)
 //$ember1->szemszin = "fökete";
 

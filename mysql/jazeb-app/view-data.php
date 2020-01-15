@@ -13,10 +13,10 @@ require_once "db.php";
 <body>
     <!-- another version
     <?php
-        if(isset($_GET['id'])){
-            echo "<h2 class='success'>{$_GET['id']}</h2>";
-        }
-    ?> 
+// if(isset($_GET['id'])){
+//     echo "<h2 class='success'>{$_GET['id']}</h2>";
+// }
+?>
     -->
     <h2 class="success"><?php echo @$_GET['id']; ?></h2>
     <div class="">
@@ -28,21 +28,21 @@ require_once "db.php";
         </fieldset>
     </div>
     <?php
-        if(isset($_GET['searchbutton'])){
-            $connectingDB;
-            $search = $_GET['search'];
-            $sql = "SELECT * FROM emp_jazeb WHERE ename=:searcH OR ssn=:searcH";
-            $stmt = $connectingDB->prepare($sql);
-            $stmt->bindValue(':searcH', $search);
-            $stmt->execute();
-            while($DataRows = $stmt->fetch()){
-                $id = $DataRows['id'];
-                $ename = $DataRows['ename'];
-                $ssn = $DataRows['ssn'];
-                $dept = $DataRows['dept'];
-                $salary = $DataRows['salary'];
-                $address = $DataRows['address'];
-                ?>
+if (isset($_GET['searchbutton'])) {
+    $connectingDB;
+    $search = $_GET['search'];
+    $sql = "SELECT * FROM emp_jazeb WHERE ename=:searcH OR ssn=:searcH";
+    $stmt = $connectingDB->prepare($sql);
+    $stmt->bindValue(':searcH', $search);
+    $stmt->execute();
+    while ($DataRows = $stmt->fetch()) {
+        $id = $DataRows['id'];
+        $ename = $DataRows['ename'];
+        $ssn = $DataRows['ssn'];
+        $dept = $DataRows['dept'];
+        $salary = $DataRows['salary'];
+        $address = $DataRows['address'];
+        ?>
                 <div>
                     <table width="1000" border="5" align="center">
                         <caption>Search result</caption>
@@ -64,13 +64,13 @@ require_once "db.php";
                             <td><?php echo $address; ?></td>
                             <td><a href="view-data.php">Search again</a></td>
                         </tr>
-                    
+
                     </table>
                 </div>
     <?php
-            }
-        }
-    ?>
+}
+}
+?>
     <table width="1000" border="5" align="center">
         <caption>View from DB</caption>
         <tr>
@@ -88,14 +88,14 @@ $connectingDB;
 $sql = "SELECT * FROM emp_jazeb";
 $stmt = $connectingDB->query($sql);
 
-while($DataRows=$stmt->fetch()){
+while ($DataRows = $stmt->fetch()) {
     $id = $DataRows['id'];
     $ename = $DataRows['ename'];
     $ssn = $DataRows['ssn'];
     $dept = $DataRows['dept'];
     $salary = $DataRows['salary'];
     $address = $DataRows['address'];
-?>
+    ?>
     <tr>
         <td><?php echo $id; ?></td>
         <td><?php echo $ename; ?></td>

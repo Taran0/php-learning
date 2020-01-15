@@ -15,7 +15,7 @@ $i++;
 //elöször kiiír és csak utána növel
 echo ($i++) . "<br>";
 
-//először növel és utána kiiír
+
 echo (++$i) . "<br>";
 
 //string összefűzés

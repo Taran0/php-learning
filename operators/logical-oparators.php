@@ -18,11 +18,10 @@ if ($a != $b) {
     echo "nem egyenlő az értékük" . "<br>";
 }
 
-//ua mint felette
 if ($a <> $b) {
     echo "Vagy a típus vagy az érték nem egyenlő" . "<br>";
 } else {
-    echo "nem egyenlő az értékük" . "<br>";
+    echo "vagy a típus vagy az érték egyenlő" . "<br>";
 }
 
 //and = &&
