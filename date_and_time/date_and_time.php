@@ -18,4 +18,8 @@ echo $DateTime;
 //current time in sql date format
 $DateTimeSql = strftime("%Y-%m-%d %H:%M:%S", time());
 
+$ezmiez = time(5*3600+0*60);
+echo "ezmeiz:";
+echo $ezmiez;
+
 ?>
